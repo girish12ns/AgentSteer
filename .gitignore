@@ -1,0 +1,23 @@
+# .gitignore
+# Environment files
+.env
+.env.development
+.env.*
+*.env
+.env.example
+.env.development/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE settings
+.vsc
