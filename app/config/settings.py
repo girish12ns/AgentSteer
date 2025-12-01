@@ -1,4 +1,7 @@
+
+
 from pydantic_settings import BaseSettings
+from pydantic import ConfigDict
 
 class Settings(BaseSettings):
     GOOGLE_CLIENT_ID: str
@@ -7,6 +10,17 @@ class Settings(BaseSettings):
     LOCAL_POSTGRES_URL: str  # keep only one field
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     ALGORITHM: str = "HS256"
+
+
+    STG_BASE_URL:str
+    PARTNER_ID:str
+    AiSensy_API_Key:str
+    BUSINESS_ID:str
+
+
+
+
+
 
     #Databse connection
     mongodb_uri:str
@@ -39,13 +53,17 @@ class Settings(BaseSettings):
 
 
 
+    model_config = ConfigDict(env_file=".env")
 
 
 
 
 
-    class Config:
-        env_file = ".env.example"
-        env_file_encoding = "utf-8"
+
+
+
+
+
+ 
 
 settings = Settings()
